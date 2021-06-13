@@ -1,0 +1,48 @@
+.list-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-wrap .lists {
+  margin: 20px;
+}
+.list-wrap h4 {
+  background-color: blue;
+  color: #ffffff;
+  padding: 10px 40px;
+  margin: 0;
+}
+.list-wrap ul {
+  border: 1px solid #000000;
+  padding: 0;
+  margin: 0;
+  max-height: 430px;
+  overflow-y: scroll;
+}
+.list-wrap ul li {
+  border-bottom: 1px solid #000000;
+  padding: 10px 40px;
+  list-style-type: none;
+}
+.list-wrap ul li.item-selected {
+  background-color: #000000;
+  color: #ffffff;
+}
+.list-wrap ul li.active {
+  color: #ffffff;
+  background-color: blueviolet;
+}
+.list-wrap ul li:last-child{
+  border: none;
+}
+.lists button {
+  appearance: none;
+  background-color: #bebebe;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  cursor: pointer;
+}

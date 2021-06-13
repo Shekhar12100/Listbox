@@ -1,0 +1,34 @@
+<div class="overlay" *ngIf="popup">
+<div class="modal" id="modal">
+  <div class="close" (click)="close()">X</div>
+  <div class="modal-content">
+    <form #addItemForm = "ngForm" (ngSubmit) = "onClickSubmit(addItemForm.value)">
+    <div class="form-group">
+      <label for="itemname">Item Name</label>
+      <input type="text" placeholder="Item Name" name="name" id="itemname" [(ngModel)]="itemval.name"  required #name="ngModel"/>
+      <div [hidden]="name.valid || name.pristine" class="error">
+        Item name is required
+      </div>
+    </div>
+    <div class="form-group select-list">
+        <label for="itemlist">Select List</label>
+      <select name="itemlist" id="itemlist" [(ngModel)]="itemval.itemlist" required #itemlist="ngModel">
+        <option>List A</option>
+        <option>List B</option>
+      </select>
+
+      <div [hidden]="itemlist.valid || itemlist.pristine" class="error">
+        Please select the List
+      </div>
+    </div>
+    <input type="hidden" name="selected" id="itemtype" value="{{slectedval}}" [(ngModel)]="itemval.selected" />
+    <div class="form-group">
+      <button [disabled]="!addItemForm.form.valid">Add Item</button>
+    </div>
+  </form>
+  </div>
+</div>
+</div>
+
+
+

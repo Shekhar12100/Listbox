@@ -1,0 +1,24 @@
+<div class="list-wrap">
+  <div class="lists list-a">
+    <h4>List A</h4>
+    <ul>
+    <li *ngFor="let item of listA" [class.item-selected]="item.selected" (click)="toggleSelection(item, 1)">{{item.name}}</li>
+    </ul>
+  </div>
+
+  <div class="lists">
+    <button type="button" (click)="moveSelected('right')">Move to List A</button>
+    <button type="button" (click)="moveSelected('left')">Move to List B</button>
+    <button type="button" (click)="showPopup()">Add</button>
+    <button type="button" (click)="deleteItem()">Delete</button>
+  </div>
+
+  <div class="lists list-b">
+    <h4>List B</h4>
+    <ul>
+      <li *ngFor="let item of listB" [class.item-selected]="item.selected" (click)="toggleSelection(item, 2)">{{item.name}}</li>
+    </ul>
+  </div>
+</div>
+
+<app-modal (listEvent)="receiveList($event)"></app-modal>
